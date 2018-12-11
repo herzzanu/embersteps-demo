@@ -20,6 +20,13 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    firebase: {
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: 'embersteps.firebaseapp.com',
+      databaseURL: 'https://embersteps.firebaseio.com',
+      storageBucket: 'embersteps.appspot.com'
     }
   };
 
@@ -48,6 +55,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.factoryGuy = { useScenarios: true };
     // here you can enable a production-specific feature
   }
 
