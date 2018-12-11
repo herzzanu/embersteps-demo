@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-4">
+    {{select-user user=project.user onCreate=(action "onCreate")}}
+  </div>
+</div>
+
+{{#bs-modal open=showModal fade=false onHidden=(action (mut showModal) false) as |modal|}}
+  {{#modal.header}}
+    <h4 class="modal-title">
+      New User
+    </h4>
+  {{/modal.header}}
+
+  {{#modal.body}}
+    {{#bs-form formLayout=formLayout model=newUser onSubmit=(perform save) as |form|}}
+      {{form.element label="First Name" property="firstName" required=true}}
+      {{form.element label="Last Name" property="lastName" required=true}}
+
+      {{bs-button defaultText="Create user" type="primary" buttonType="submit" disabled=save.isRunning}}
+    {{/bs-form}}
+  {{/modal.body}}
+{{/bs-modal}}

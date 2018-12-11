@@ -18,6 +18,9 @@ You will need the following things properly installed on your computer.
 * `cd embersteps-examples`
 * `npm install`
 
+## Running / Development - Mock Server
+* `ember s -e mock`
+
 ## Running / Development
 
 * `ember serve`

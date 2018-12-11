@@ -1,0 +1,13 @@
+<label>Project owner</label>
+
+{{#power-select
+  options=options
+  selected=user
+  searchField="fullName"
+  onchange=(action (mut user))
+  afterOptionsComponent=(component "select-user/create" onCreate=(action "onCreate"))
+  onopen=(action "fetchOptions")
+  as |user|
+}}
+  #{{user.id}} {{user.fullName}}
+{{/power-select}}
